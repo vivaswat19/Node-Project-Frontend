@@ -1,0 +1,44 @@
+@use "../base/typography"as ty;
+@use "../base/mixins";
+
+.nav {
+    font-family: ty.$nav_font;
+    font-size: ty.$nav_size;
+    display: flex;
+
+    .logo {
+        font: ty.$logo_font;
+        font-size: ty.$logo_size;
+        color: ty.$logo_color;
+        text-decoration: none;
+        font-weight: ty.$logo_weight;
+        margin: 0.5rem 1rem;
+    }
+
+    .navContainer {
+        @include mixins.center();
+        width: 100%;
+        justify-content: end;
+
+        .links {
+            @include mixins.center();
+            color: ty.$nav_color;
+            text-decoration: none;
+            font-weight: ty.$nav_weight;
+            margin: 0.5rem;
+        }
+
+        .links:hover {
+            color: ty.$nav_hover_color;
+        }
+
+        .selected {
+            @include mixins.center();
+            color: ty.$nav_hover_color;
+            text-decoration: none;
+            font-weight: ty.$nav_weight;
+            margin: 0.5rem;
+        }
+
+    }
+}
