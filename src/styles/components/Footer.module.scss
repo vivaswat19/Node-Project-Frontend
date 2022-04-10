@@ -1,0 +1,18 @@
+@use "../base/mixins";
+@use "../base/typography"as ty;
+
+.container {
+    @include mixins.center();
+    font: ty.$font;
+    text-decoration: none;
+
+    .link {
+        .contactlink {
+            margin: 10px;
+        }
+
+        .contactlink:hover {
+            color: red;
+        }
+    }
+}

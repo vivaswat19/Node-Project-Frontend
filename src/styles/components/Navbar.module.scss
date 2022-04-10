@@ -1,17 +1,38 @@
 @use "../base/typography"as ty;
 @use "../base/mixins";
 
+$nav_font : ty.$font;
+$nav_color: rgb(99, 99, 99);
+$nav_size: 2rem;
+$nav_weight: 550;
+
+$nav_hover_color: rgb(18, 17, 17);
+$nav_hover_size: 2.2rem;
+
+$logo_font: ty.$logo_font;
+$logo_weight: 700;
+$logo_color: rgb(0, 0, 0);
+$logo_size: 3rem;
+
 .nav {
-    font-family: ty.$nav_font;
-    font-size: ty.$nav_size;
+    font-family: $nav_font;
+    font-size: $nav_size;
     display: flex;
+    height: 80px;
+    width: 100vw;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 100000;
+    background-color: white;
 
     .logo {
-        font: ty.$logo_font;
-        font-size: ty.$logo_size;
-        color: ty.$logo_color;
+        font: $logo_font;
+        font-size: $logo_size;
+        color: $logo_color;
         text-decoration: none;
-        font-weight: ty.$logo_weight;
+        font-weight: $logo_weight;
         margin: 0.5rem 1rem;
     }
 
@@ -22,22 +43,17 @@
 
         .links {
             @include mixins.center();
-            color: ty.$nav_color;
+            color: $nav_color;
             text-decoration: none;
-            font-weight: ty.$nav_weight;
-            margin: 0.5rem;
+            font-weight: $nav_weight;
+            margin: 1rem;
+            transition: 0.2s;
+            width: 200px;
         }
 
         .links:hover {
-            color: ty.$nav_hover_color;
-        }
-
-        .selected {
-            @include mixins.center();
-            color: ty.$nav_hover_color;
-            text-decoration: none;
-            font-weight: ty.$nav_weight;
-            margin: 0.5rem;
+            color: $nav_hover_color;
+            font-size: $nav_hover_size;
         }
 
     }
