@@ -1,0 +1,244 @@
+@use "../base/mixins";
+@use "../base/typography"as ty;
+
+
+.button {
+    @include mixins.center();
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: ty.$font;
+    transition: all 0.3s;
+
+    a {
+        text-decoration: none;
+    }
+
+    .icon {
+        font-size: 2rem;
+        transition: 0.2s;
+    }
+
+
+    &[button-size="small"] {
+        padding: 0px 30px;
+        margin: 10px;
+
+        .contactp {
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+    }
+
+    &[button-size="medium"] {
+        padding: 0px 30px;
+        margin: 10px;
+
+        p {
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+    }
+
+    &[button-size="large"] {
+        padding: 0px 30px;
+        margin: 10px;
+
+        p {
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+    }
+
+    &[color="red"] {
+        $color-primary: rgb(255, 0, 0);
+        $color-secondary: white;
+
+        &[data-value="primary"] {
+            color: $color-secondary;
+            background-color: $color-primary;
+
+            a {
+                color: $color-secondary;
+            }
+        }
+
+        &[data-value="secondary"] {
+            color: $color-primary;
+            background-color: $color-secondary;
+
+            a {
+                color: $color-primary;
+            }
+        }
+    }
+
+    &[color="blue"] {
+        $color-primary: rgb(0, 0, 255);
+        $color-secondary: white;
+
+        &[data-value="primary"] {
+            color: $color-secondary;
+            background-color: $color-primary;
+
+            a {
+                color: $color-secondary;
+            }
+        }
+
+        &[data-value="secondary"] {
+            color: $color-primary;
+            background-color: $color-secondary;
+
+            a {
+                color: $color-primary;
+            }
+        }
+    }
+
+    &[color="black"] {
+        $color-primary: rgb(55, 55, 55);
+        $color-secondary: white;
+
+        &[data-value="primary"] {
+            color: $color-secondary;
+            background-color: $color-primary;
+
+            a {
+                color: $color-secondary;
+            }
+        }
+
+        &[data-value="secondary"] {
+            color: $color-primary;
+            background-color: $color-secondary;
+
+            a {
+                color: $color-primary;
+            }
+        }
+    }
+
+
+    &[color="mustard"] {
+        $color-primary: rgb(255, 219, 88);
+        $color-secondary: rgb(48, 48, 48);
+
+        &[data-value="primary"] {
+            color: $color-secondary;
+            background-color: $color-primary;
+
+            a {
+                color: $color-secondary;
+            }
+        }
+
+        &[data-value="secondary"] {
+            color: $color-primary;
+            background-color: $color-secondary;
+
+            a {
+                color: $color-primary;
+            }
+        }
+    }
+}
+
+.button:hover {
+    .icon {
+        transform: translateX(10px);
+    }
+
+
+    &[color="red"] {
+        $color-primary: rgb(223, 0, 0);
+        $color-secondary: white;
+
+        &[data-value="primary"] {
+            color: $color-secondary;
+            background-color: $color-primary;
+
+            a {
+                color: $color-secondary;
+            }
+        }
+
+        &[data-value="secondary"] {
+            color: $color-secondary;
+            background-color: $color-primary;
+
+            a {
+                color: $color-secondary;
+            }
+        }
+    }
+
+    &[color="blue"] {
+        $color-primary: rgb(0, 0, 162);
+        $color-secondary: white;
+
+        &[data-value="primary"] {
+            color: $color-secondary;
+            background-color: $color-primary;
+
+            a {
+                color: $color-secondary;
+            }
+        }
+
+        &[data-value="secondary"] {
+            color: $color-secondary;
+            background-color: $color-primary;
+
+            a {
+                color: $color-secondary;
+            }
+        }
+    }
+
+    &[color="black"] {
+        $color-primary: rgb(36, 30, 30);
+        $color-secondary: white;
+
+        &[data-value="primary"] {
+            color: $color-secondary;
+            background-color: $color-primary;
+
+            a {
+                color: $color-secondary;
+            }
+        }
+
+        &[data-value="secondary"] {
+            color: $color-secondary;
+            background-color: $color-primary;
+
+            a {
+                color: $color-secondary;
+            }
+        }
+    }
+
+    &[color="mustard"] {
+        $color-primary: rgb(255, 219, 88);
+        $color-secondary: rgb(48, 48, 48);
+
+        &[data-value="primary"] {
+            color: $color-primary;
+            background-color: $color-secondary;
+
+            a {
+                color: $color-primary;
+            }
+        }
+
+        &[data-value="secondary"] {
+            color: $color-secondary;
+            background-color: $color-primary;
+
+            a {
+                color: $color-secondary;
+            }
+        }
+    }
+}

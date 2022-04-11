@@ -1,0 +1,6 @@
+@use "../base/mixins";
+
+.container {
+    @include mixins.center();
+    margin-top: 80px;
+}

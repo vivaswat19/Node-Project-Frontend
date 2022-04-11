@@ -1,18 +1,45 @@
 @use "../base/mixins";
 @use "../base/typography"as ty;
 
-.container {
+
+
+.footcontainer {
     @include mixins.center();
+    flex-direction: column;
     font: ty.$font;
     text-decoration: none;
+    width: 100vw;
+    // background-color: rgb(48, 48, 48);
+    background-color: rgb(255, 219, 88);
+    // height: 200px;
+    padding-top: 10px;
+
+    .hr {
+        margin: 10px 0px;
+        width: 75%;
+        height: 5px;
+        background-image: linear-gradient(to right, rgb(142, 142, 142) 20%, rgba(255, 255, 255, 0) 0%);
+        background-position: bottom;
+        background-size: 70px 5px;
+        background-repeat: repeat-x;
+    }
+
 
     .link {
+        @include mixins.center();
+        padding-bottom: 1rem;
+        width: 100%;
+        height: 80px;
+        transition: 0.3s;
+
         .contactlink {
-            margin: 10px;
+            color: rgb(99, 99, 99);
+            padding: 4px 1.5rem;
+            transition: 0.3s;
         }
 
         .contactlink:hover {
-            color: red;
+            color: rgb(0, 0, 0);
         }
     }
 }

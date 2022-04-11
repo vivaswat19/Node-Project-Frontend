@@ -3,16 +3,16 @@
 
 $nav_font : ty.$font;
 $nav_color: rgb(99, 99, 99);
-$nav_size: 2rem;
+$nav_size: 1rem;
 $nav_weight: 550;
 
 $nav_hover_color: rgb(18, 17, 17);
-$nav_hover_size: 2.2rem;
+$nav_hover_size: 1.2rem;
 
 $logo_font: ty.$logo_font;
 $logo_weight: 700;
 $logo_color: rgb(0, 0, 0);
-$logo_size: 3rem;
+$logo_size: 2rem;
 
 .nav {
     font-family: $nav_font;
@@ -23,9 +23,8 @@ $logo_size: 3rem;
     position: fixed;
     top: 0px;
     left: 0px;
-    right: 0px;
     z-index: 100000;
-    background-color: white;
+    background-color: rgb(255, 219, 88);
 
     .logo {
         font: $logo_font;
@@ -33,27 +32,35 @@ $logo_size: 3rem;
         color: $logo_color;
         text-decoration: none;
         font-weight: $logo_weight;
-        margin: 0.5rem 1rem;
+        margin: 1rem 1rem;
+        margin-left: 10%;
     }
 
     .navContainer {
         @include mixins.center();
         width: 100%;
         justify-content: end;
+        margin-right: 10%;
+
+        .vl {
+            border-width: 0.1px;
+            border-style: solid;
+            height: 30%;
+            color: $nav_color;
+        }
 
         .links {
             @include mixins.center();
             color: $nav_color;
             text-decoration: none;
             font-weight: $nav_weight;
-            margin: 1rem;
+            margin: 1rem 2rem;
             transition: 0.2s;
-            width: 200px;
         }
 
         .links:hover {
             color: $nav_hover_color;
-            font-size: $nav_hover_size;
+            transform: scale(1.2);
         }
 
     }

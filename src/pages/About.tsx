@@ -1,8 +1,10 @@
 import React from "react";
-
+import styles from "../styles/pages/About.module.scss"
 const About = () => {
     return (
-        <p>About</p>
+        <div className={styles.container}>
+            <p>About</p>
+        </div>
     );
 }
 
