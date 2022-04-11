@@ -1,1 +1,1 @@
-color-Scheme : https://in.pinterest.com/pin/279997301821157273/
+color-Scheme : https://diariesofanessexgirl.com/gray-and-yellow-color-palette/
