@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import styles from "../styles/components/Navbar.module.scss";
 const Navbar = () => {
     const links = [
-        { to: 'Home', link: "/", div: true },
-        { to: 'About', link: "/about", div: true },
-        { to: 'Projects', link: "/projects", div: true },
-        { to: 'Contact Me!', link: "/contact", div: false },
+        { key: 1, to: 'Home', link: "/", div: true },
+        { key: 2, to: 'About', link: "/about", div: true },
+        { key: 3, to: 'Projects', link: "/projects", div: true },
+        { key: 4, to: 'Contact Me!', link: "/contact", div: false },
     ]
 
     return (
@@ -14,7 +14,7 @@ const Navbar = () => {
             <div className={styles.navContainer}>
                 {links.map((l) =>
                     <>
-                        <a key={l.to} href={l.link} className={styles.links} >
+                        <a href={l.link} className={styles.links} >
                             {l.to}
                         </a>
                         {l.div ?
@@ -22,7 +22,7 @@ const Navbar = () => {
                     </>
                 )}
             </div>
-        </nav>
+        </nav >
     );
 }
 

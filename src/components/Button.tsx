@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from "react";
+import React, { AnimationEventHandler, MouseEventHandler } from "react";
 import { IconProps, IconWeight } from "phosphor-react";
 import styles from "../styles/components/Button.module.scss";
 
@@ -10,12 +10,14 @@ interface Props {
     link?: string,
     icon?: React.ForwardRefExoticComponent<IconProps & React.RefAttributes<SVGSVGElement>>;
     onClick: MouseEventHandler<HTMLButtonElement>;
+    hover?: boolean;
 }
 
 const Button = (props: Props) => {
     const value = props.hierarchy ? props.hierarchy : "primary";
     const color = props.color ? props.color : "blue";
     const size = props.size ? props.size : "medium";
+    const hover = props.hover ? props.hover : true;
 
     return (
         <button
@@ -25,19 +27,21 @@ const Button = (props: Props) => {
             button-size={size}
             onClick={props.onClick}
         >
-            {props.link ?
-                <a href={props.link}>
-                    {props.text &&
-                        <p className={styles.p}>{props.text}</p>
-                    }
-                </a>
-                :
-                props.text && <p className={styles.p}>{props.text}</p>
+            {
+                props.link ?
+                    <a href={props.link}>
+                        {props.text &&
+                            <p className={styles.p}>{props.text}</p>
+                        }
+                    </a>
+                    :
+                    props.text && <p className={styles.p}>{props.text}</p>
             }
-            {props.icon &&
+            {
+                props.icon &&
                 <props.icon className={styles.icon} weight="fill"></props.icon>
             }
-        </button>
+        </button >
     )
 }
 

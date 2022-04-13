@@ -1,6 +1,251 @@
 @use "../base/mixins";
+@use "../base//typography"as ty;
 
-.container {
+.homeContainer {
     @include mixins.center();
+    flex-direction: column;
     margin-top: 80px;
+    min-height: calc(100vh - 260px);
+    font-family: ty.$font;
+
+    .heading {
+        font-style: italic;
+        color: rgb(0, 0, 0);
+        width: 100%;
+        margin: 0;
+    }
+
+    .heading2 {
+        font-style: italic;
+        color: rgb(0, 0, 0);
+        width: 100%;
+        margin: 0;
+    }
+
+    .subheading {
+        font-style: italic;
+        color: rgb(99, 99, 99);
+    }
+
+    .banner {
+        @include mixins.center();
+        width: fit-content;
+        margin: 2rem;
+        transition: 0.3s;
+
+        img {
+            border-radius: 50%;
+            border-style: solid;
+            border-color: #ffc018;
+            border-width: 6px;
+            width: 25%;
+            min-width: 160px;
+            margin-right: 6vh;
+            transition: 0.3s;
+        }
+
+        .bdata {
+            @include mixins.center();
+            flex-direction: column;
+            justify-content: flex-start;
+            transition: 0.3s;
+
+            .heading {
+                transition: 0.4s;
+            }
+
+            .heading2 {
+                transition: 0.5s;
+            }
+
+            .subheading {
+                transition: 0.6s;
+            }
+        }
+    }
+
+    .InfoContainer {
+        width: 100%;
+        @include mixins.center();
+        flex-direction: column;
+
+        .heading {
+            text-align: center;
+        }
+
+        section {
+            width: 85%;
+            border-bottom: 3px solid #ffc018;
+            min-height: 100px;
+            padding-left: 10px;
+
+            .head {
+                @include mixins.center();
+                justify-content: left;
+                margin-top: 1rem;
+            }
+
+            .subheading {
+                margin: 0;
+                margin-left: 0.5rem;
+                transition: 0.3s;
+            }
+        }
+
+        section:hover {
+            .subheading {
+                margin-left: 1rem;
+            }
+        }
+    }
+}
+
+
+// screen size
+@media only screen and (min-width: 1150px) {
+
+    .heading {
+        font-size: 50px;
+        font-weight: 900;
+    }
+
+    .heading2 {
+        font-size: 45px;
+        font-weight: 900;
+    }
+
+    .subheading {
+        font-size: 35px;
+        max-width: 800px;
+    }
+
+    .banner:hover {
+        img {
+            transform: scale(1.1);
+        }
+
+        .bdata {
+            .heading {
+                transform: translateX(10px);
+            }
+
+            .heading2 {
+                transform: translateX(20px);
+            }
+
+            .subheading {
+                transform: translateX(30px);
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 1150px) and (min-width: 900px) {
+
+    .heading {
+        font-size: 50px;
+        font-weight: 900;
+    }
+
+    .heading2 {
+        font-size: 45px;
+        font-weight: 900;
+    }
+
+    .subheading {
+        font-size: 35px;
+        max-width: 800px;
+    }
+
+    .banner:hover {
+        img {
+            transform: scale(1.1);
+        }
+
+        .bdata {
+            .heading {
+                transform: translateX(10px);
+            }
+
+            .heading2 {
+                transform: translateX(20px);
+            }
+
+            .subheading {
+                transform: translateX(30px);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 700px) {
+    .heading {
+        font-size: 40px;
+        font-weight: 900;
+    }
+
+    .heading2 {
+        font-size: 35px;
+        font-weight: 900;
+    }
+
+    .subheading {
+        font-size: 25px;
+        max-width: 800px;
+    }
+
+    .banner:hover {
+        img {
+            transform: scale(1.1);
+        }
+
+        .bdata {
+            .heading {
+                transform: translateX(5px);
+            }
+
+            .heading2 {
+                transform: translateX(10px);
+            }
+
+            .subheading {
+                transform: translateX(20px);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) and (min-width: 500px) {
+
+    .heading {
+        font-size: 30px;
+        font-weight: 900;
+    }
+
+    .heading2 {
+        font-size: 25px;
+        font-weight: 900;
+    }
+
+    .subheading {
+        font-size: 20px;
+        max-width: 800px;
+    }
+
+    .banner:hover {
+        img {
+            transform: scale(1.1);
+        }
+
+        .bdata {
+            .heading2 {
+                transform: translateX(5px);
+            }
+
+            .subheading {
+                transform: translateX(10px);
+            }
+        }
+    }
 }

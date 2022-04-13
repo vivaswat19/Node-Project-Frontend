@@ -23,6 +23,7 @@
     &[button-size="small"] {
         padding: 0px 30px;
         margin: 10px;
+        width: 100px;
 
         .contactp {
             font-size: 1.2rem;
@@ -121,7 +122,7 @@
 
 
     &[color="mustard"] {
-        $color-primary: rgb(255, 219, 88);
+        $color-primary: #ffc018;
         $color-secondary: rgb(48, 48, 48);
 
         &[data-value="primary"] {
@@ -220,7 +221,7 @@
     }
 
     &[color="mustard"] {
-        $color-primary: rgb(255, 219, 88);
+        $color-primary: #ffc018;
         $color-secondary: rgb(48, 48, 48);
 
         &[data-value="primary"] {

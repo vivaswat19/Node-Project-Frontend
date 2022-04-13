@@ -26,16 +26,16 @@ const Footer = () => {
             />
 
             <div className={styles.link}>
-                <a href="/" className={styles.contactlink}>
+                <a href="mailto: vivaswat19@gmail.com" className={styles.contactlink}>
                     <GoogleLogo weight="bold" size={40} />
                 </a>
-                <a href="/" className={styles.contactlink}>
+                <a href="https://www.linkedin.com/in/vivaswat-sinha/" target="__blank" className={styles.contactlink}>
                     <LinkedinLogo weight="bold" size={40} />
                 </a>
-                <a href="/" className={styles.contactlink}>
+                <a href="https://www.instagram.com/vivaswat_sinha/" target="__blank" className={styles.contactlink}>
                     <InstagramLogo weight="bold" size={40} />
                 </a>
-                <a href="/" className={styles.contactlink}>
+                <a href="https://www.facebook.com/vivaswat.sinha" target="__blank" className={styles.contactlink}>
                     <FacebookLogo weight="bold" size={40} />
                 </a>
             </div>
