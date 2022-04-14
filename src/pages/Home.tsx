@@ -1,23 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+
 import styles from "../styles/pages/Home.module.scss";
 import Button from "../components/Button";
-import { FilePdf, File, Student, Trophy, Baseball, GameController, Gear } from "phosphor-react";
+import { File, Student, Trophy, Baseball, GameController, Gear, CaretDown, CaretUp } from "phosphor-react";
 const Home = () => {
+    const [active, setActive] = useState<boolean[]>([false, false, false, false, false])
 
     const pdfButtonHandler = (event: any) => {
         console.log(event)
     }
-
-    const InfoData = [
-        { name: "Education" },
-        { name: "Skills" },
-        { name: "Achievements" },
-        { name: "Interests" },
-        { name: "Hobbies" },
-    ]
-
     return (
-        <div className={styles.homeContainer}>
+        <div className={styles.homeContainer} >
             <div className={styles.banner}>
                 <img src="https://media-exp1.licdn.com/dms/image/C5603AQEgRDNhcIhpiw/profile-displayphoto-shrink_400_400/0/1579688254912?e=1655337600&v=beta&t=PJB4gA7YN3trLRzt5c9eJXgFcGRmGLt4UW4MTMa1ODY" alt="photo" />
                 <div className={styles.bdata}>
@@ -31,45 +24,74 @@ const Home = () => {
             <div className={styles.InfoContainer}>
                 <p className={styles.heading}>About Me!</p>
 
-                <section>
+                <section onClick={(event) => {
+                    active[0] = !active[0];
+                    setActive([...active]);
+                }}>
                     <div className={styles.head}>
-                        <Student size={38} color="rgb(99, 99, 99)" />
-                        <p className={styles.subheading}>
-                            Education
-                        </p>
-                    </div>
-
-                </section>
-                <section>
-                    <div className={styles.head}>
-                        <Gear size={38} color="rgb(99, 99, 99)" />
-                        <p className={styles.subheading}>
-                            Skills
-                        </p>
+                        <Student className={styles.icon} size={38} color="rgb(99, 99, 99)" />
+                        <p className={styles.subheading}>Education</p>
+                        {active[0] ?
+                            <CaretUp className={styles.caret} size={38} color="rgb(99, 99, 99)" />
+                            :
+                            <CaretDown className={styles.caret} size={38} color="rgb(99, 99, 99)" />
+                        }
                     </div>
                 </section>
-                <section>
+                <section onClick={(event) => {
+                    active[1] = !active[1];
+                    setActive([...active]);
+                }}>
                     <div className={styles.head}>
-                        <Trophy size={38} color="rgb(99, 99, 99)" />
-                        <p className={styles.subheading}>
-                            Achievements
-                        </p>
+                        <Gear className={styles.icon} size={38} color="rgb(99, 99, 99)" />
+                        <p className={styles.subheading}>Skills</p>
+                        {active[1] ?
+                            <CaretUp className={styles.caret} size={38} color="rgb(99, 99, 99)" />
+                            :
+                            <CaretDown className={styles.caret} size={38} color="rgb(99, 99, 99)" />
+                        }
                     </div>
                 </section>
-                <section>
+                <section onClick={(event) => {
+                    active[2] = !active[2];
+                    setActive([...active]);
+                }}>
                     <div className={styles.head}>
-                        <Baseball size={38} color="rgb(99, 99, 99)" />
-                        <p className={styles.subheading}>
-                            Interests
-                        </p>
+                        <Trophy className={styles.icon} size={38} color="rgb(99, 99, 99)" />
+                        <p className={styles.subheading}>Achievements</p>
+                        {active[2] ?
+                            <CaretUp className={styles.caret} size={38} color="rgb(99, 99, 99)" />
+                            :
+                            <CaretDown className={styles.caret} size={38} color="rgb(99, 99, 99)" />
+                        }
                     </div>
                 </section>
-                <section>
+                <section onClick={(event) => {
+                    active[3] = !active[3];
+                    setActive([...active]);
+                }}>
                     <div className={styles.head}>
-                        <GameController size={38} color="rgb(99, 99, 99)" />
-                        <p className={styles.subheading}>
-                            Hobbies
-                        </p>
+                        <Baseball className={styles.icon} size={38} color="rgb(99, 99, 99)" />
+                        <p className={styles.subheading}>Interests</p>
+                        {active[3] ?
+                            <CaretUp className={styles.caret} size={38} color="rgb(99, 99, 99)" />
+                            :
+                            <CaretDown className={styles.caret} size={38} color="rgb(99, 99, 99)" />
+                        }
+                    </div>
+                </section>
+                <section onClick={(event) => {
+                    active[4] = !active[4];
+                    setActive([...active]);
+                }}>
+                    <div className={styles.head}>
+                        <GameController className={styles.icon} size={38} color="rgb(99, 99, 99)" />
+                        <p className={styles.subheading}>Hobbies</p>
+                        {active[4] ?
+                            <CaretUp className={styles.caret} size={38} color="rgb(99, 99, 99)" />
+                            :
+                            <CaretDown className={styles.caret} size={38} color="rgb(99, 99, 99)" />
+                        }
                     </div>
                 </section>
             </div>
