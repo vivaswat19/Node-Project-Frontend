@@ -1,0 +1,46 @@
+@use "../base/mixins";
+@use "../base/typography"as ty;
+
+.skillContainer {
+    display: grid;
+    grid-template-columns: 30% 60%;
+    width: 90%;
+    font-size: 22px;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+
+    .subheading {
+        font-family: ty.$font;
+        font-style: italic;
+        color: rgb(99, 99, 99);
+    }
+
+}
+
+.progress {
+    height: max-content;
+    width: 100%;
+    background-color: rgb(33, 31, 31);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transform-origin: 100% 0%;
+
+    .progressDone {
+        height: 100%;
+        background-color: #ffc018;
+        border-radius: 10px;
+    }
+
+    p {
+        transition: all 0.3s;
+    }
+}
+
+.progress:hover {
+
+    p {
+        transform: translateX(5px);
+    }
+}

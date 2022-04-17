@@ -13,8 +13,6 @@ const Footer = () => {
 
     return (
         <div className={styles.footcontainer}>
-
-
             <Button
                 text="Contact Me Now!"
                 link="contact"

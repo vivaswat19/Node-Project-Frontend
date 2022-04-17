@@ -1,6 +1,16 @@
 @use "../base/mixins";
 @use "../base//typography"as ty;
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 .homeContainer {
     @include mixins.center();
     flex-direction: column;
@@ -68,6 +78,8 @@
         width: 100%;
         @include mixins.center();
         flex-direction: column;
+        font-family: ty.$font;
+        color: rgb(99, 99, 99);
 
         .heading {
             text-align: center;
@@ -77,14 +89,27 @@
             width: 85%;
             border-bottom: 3px solid #ffc018;
             min-height: 100px;
-            padding-left: 10px;
-            transition: 0.3s;
+            padding-bottom: 5px;
 
-            .head {
-                @include mixins.center();
-                justify-content: left;
-                margin-top: 1rem;
-                position: relative;
+            .hidden {
+                padding: 10px;
+                flex-direction: column;
+                visibility: hidden;
+                height: 0;
+                opacity: 0;
+                margin: 10px 10px;
+                padding-left: 20px;
+
+                p {
+                    margin: 0px 10px;
+                }
+            }
+
+            .show {
+                animation: fadeIn 0.3s linear;
+                visibility: visible;
+                height: auto;
+                opacity: 1;
             }
 
             .subheading {
@@ -92,6 +117,16 @@
                 margin-left: 0.5rem;
                 transition: 0.3s;
             }
+
+            .head {
+                @include mixins.center();
+                justify-content: left;
+                margin-top: 1rem;
+                position: relative;
+                transition: 0.3s;
+                cursor: pointer;
+            }
+
 
             .icon {
                 transition: 0.3s;
@@ -109,7 +144,7 @@
         }
 
 
-        section:hover {
+        .head:hover {
             .subheading {
                 margin-left: 1rem;
             }
@@ -125,6 +160,11 @@
 
 // screen size
 @media only screen and (min-width: 1150px) {
+
+    .skillProgress {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
 
     .heading {
         font-size: 50px;
@@ -165,6 +205,11 @@
 
 @media only screen and (max-width: 1150px) and (min-width: 900px) {
 
+    .skillProgress {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
     .heading {
         font-size: 50px;
         font-weight: 900;
@@ -202,6 +247,11 @@
 }
 
 @media only screen and (max-width: 900px) and (min-width: 700px) {
+    .skillProgress {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
     .heading {
         font-size: 40px;
         font-weight: 900;
@@ -239,6 +289,11 @@
 }
 
 @media only screen and (max-width: 700px) and (min-width: 500px) {
+
+    .skillProgress {
+        display: grid;
+        grid-template-columns: auto;
+    }
 
     .heading {
         font-size: 30px;

@@ -11,7 +11,7 @@ const Navbar = () => {
 
     const links = [
         { key: 1, to: 'Home', link: "/", div: true },
-        { key: 2, to: 'About', link: "/about", div: true },
+        // { key: 2, to: 'About', link: "/about", div: true },
         { key: 3, to: 'Projects', link: "/projects", div: true },
         { key: 4, to: 'Contact Me!', link: "/contact", div: false },
     ]
