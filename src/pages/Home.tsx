@@ -60,12 +60,39 @@ const skillDetails = [
 ]
 
 const certificateDetails = [
-    { name: "python", src: "/", from: new Date(), to: new Date() },
-    { name: "python", src: "/", from: new Date(), to: new Date() },
-    { name: "python", src: "/", from: new Date(), to: new Date() },
-    { name: "python", src: "/", from: new Date(), to: new Date() },
-    { name: "python", src: "/", from: new Date(), to: new Date() },
+    { name: "python", src: "/", from: new Date(), to: new Date(), description: "data" },
+    { name: "python", src: "/", from: new Date(), to: new Date(), description: "data" },
+    { name: "python", src: "/", from: new Date(), to: new Date(), description: "data" },
+    { name: "python", src: "/", from: new Date(), to: new Date(), description: "data" },
+    { name: "python", src: "/", from: new Date(), to: new Date(), description: "data" },
 ]
+
+
+const achievementDetails = [
+    {name: "Cansat 2021", description: "Data", images: [
+        {src: '/', alt: "image"},
+        {src: '/', alt: "image"},
+        {src: '/', alt: "image"},
+        {src: '/', alt: "image"},
+        {src: '/', alt: "image"},
+        {src: '/', alt: "image"},
+    ]},
+    {name: "Cansat 2021", description: "Data", images: [
+        {src: '/', alt: "image"}
+    ]},
+]
+
+const interestsData = [
+    {name: "basketball", description: "data"},
+    {name: "basketball", description: "data"},
+    {name: "basketball", description: "data"},
+    {name: "basketball", description: "data"},
+    {name: "basketball", description: "data"},
+    {name: "basketball", description: "data"},
+    {name: "basketball", description: "data"},
+    {name: "basketball", description: "data"},
+]
+
 
 const Home = () => {
     const [active, setActive] = useState<boolean[]>([false, false, false, false, false, false])
@@ -202,13 +229,15 @@ const Home = () => {
                     <div className={styles.hidden}>
                         {/* certificates */}
                         {certificateDetails.map((item) =>
-                            <div>
-                                <p>{item.name}</p>
-                                <a href={item.src}>
-                                    <em>Link</em>
+                            <div className={styles.certiData}>
+                                <h1 className={styles.name}>{item.name}</h1>
+                                <a href={item.src} target="_blank">
+                                    Github Link: <em>{item.name}</em>
                                 </a>
-                                <p>from: {item.from.toDateString()}</p>
-                                <p>to: {item.to.toDateString()}</p>
+                                <p className={styles.date}>{item.from.toDateString()} - {item.to.toDateString()}</p>
+                                <p className={styles.data}>
+                                    {item.description}
+                                </p>
                             </div>
                         )}
                     </div>
@@ -232,6 +261,17 @@ const Home = () => {
 
                     <div className={styles.hidden}>
                         {/* achievements */}
+                        {achievementDetails.map((item) => 
+                            <div className={styles.achievementData}>
+                                <h1 className={styles.name}>{item.name}</h1>
+                                <p>{item.description}</p>
+                                <div className={styles.imageContainer}>
+                                    {item.images.map((image) => 
+                                        <img src={image.src} alt={image.alt} />
+                                        )}
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </section>
 
@@ -244,6 +284,7 @@ const Home = () => {
                     }}>
                         <Baseball className={styles.icon} size={38} color="rgb(99, 99, 99)" />
                         <p className={styles.subheading}>Interests / Hobbies</p>
+
                         {active[4] ?
                             <CaretUp className={styles.caret} size={38} color="rgb(99, 99, 99)" />
                             :
@@ -253,6 +294,15 @@ const Home = () => {
 
                     <div className={styles.hidden}>
                         {/* interests */}
+
+                        <div className={styles.interestContainer}>
+                            {interestsData.map((item) =>
+                                <div className={styles.interestData}>
+                                    <h1>{item.name}</h1>
+                                    <p>{item.description}</p>
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </section>
 

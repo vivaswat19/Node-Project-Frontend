@@ -88,8 +88,80 @@
         section {
             width: 85%;
             border-bottom: 3px solid #ffc018;
-            min-height: 100px;
+            min-height: 80px;
             padding-bottom: 5px;
+
+            .achievementData {
+                .imageContainer {
+                    display: grid;
+                    
+                    img {
+                        height: auto;
+                        width: 100%;
+                    }
+                }
+            }
+
+            .interestContainer {
+                display: grid;
+            }
+
+
+            .certiData {
+                margin: 10px;
+                display: grid;
+
+                .name {
+                    grid-row-start: 1;
+                    grid-row-end: 2;
+                    grid-column-start: 1;
+                    grid-column-end: 10;
+                    padding: 0;
+                    margin-top: 0;
+                }
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    grid-row-start: 2;
+                    grid-row-end: 3;
+                    grid-column-start: 1;
+                    grid-column-end: 3;
+                    text-decoration: none;
+                    color: black;
+
+                    em {
+                        padding-left: 10px;
+                        text-decoration: solid;
+                    }
+
+                    em:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+                .date {
+                    display: flex;
+                    align-items: center;
+                    grid-row-start: 2;
+                    grid-row-end: 3;
+                    grid-column-start: 9;
+                    grid-column-end: 10;
+                }
+
+                .data {
+                    display: flex;
+                    align-items: center;
+                    grid-row-start: 3;
+                    grid-row-end: 4;
+                    grid-column-start: 1;
+                    grid-column-end: 10;
+                    margin-left: 0;
+                    padding-left: 0;
+                }
+            }
+
+
 
             .hidden {
                 padding: 10px;
@@ -99,7 +171,7 @@
                 opacity: 0;
                 margin: 10px 10px;
                 padding-left: 20px;
-
+                overflow: hidden;
                 p {
                     margin: 0px 10px;
                 }
@@ -110,6 +182,7 @@
                 visibility: visible;
                 height: auto;
                 opacity: 1;
+
             }
 
             .subheading {
@@ -136,11 +209,6 @@
                 position: absolute;
                 right: 2px;
             }
-
-            .test {
-                background-color: red;
-                height: 100px;
-            }
         }
 
 
@@ -160,6 +228,19 @@
 
 // screen size
 @media only screen and (min-width: 1150px) {
+    .achievementData {
+        .imageContainer {
+            grid-template-columns: auto auto auto;
+            column-gap: 10px;
+            row-gap: 10px;
+        }
+    }
+
+    .interestContainer {
+        grid-template-columns: auto auto auto;
+        column-gap: 10px;
+        row-gap: 10px;
+    }
 
     .skillProgress {
         display: grid;
@@ -205,6 +286,20 @@
 
 @media only screen and (max-width: 1150px) and (min-width: 900px) {
 
+    .achievementData {
+        .imageContainer {
+            grid-template-columns: auto auto auto;
+            column-gap: 10px;
+            row-gap: 10px;
+        }
+    }
+
+    .interestContainer {
+        grid-template-columns: auto auto auto;
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+
     .skillProgress {
         display: grid;
         grid-template-columns: auto;
@@ -247,6 +342,21 @@
 }
 
 @media only screen and (max-width: 900px) and (min-width: 700px) {
+
+    .achievementData {
+        .imageContainer {
+            grid-template-columns: auto auto;
+            column-gap: 10px;
+            row-gap: 10px;
+        }
+    }
+
+    .interestContainer {
+        grid-template-columns: auto auto;
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+    
     .skillProgress {
         display: grid;
         grid-template-columns: auto;
@@ -289,6 +399,19 @@
 }
 
 @media only screen and (max-width: 700px) and (min-width: 500px) {
+    .achievementData {
+        .imageContainer {
+            grid-template-columns: auto;
+            column-gap: 10px;
+            row-gap: 10px;
+        }
+    }
+
+    .interestContainer {
+        grid-template-columns: auto auto;
+        column-gap: 10px;
+        row-gap: 10px;
+    }
 
     .skillProgress {
         display: grid;
